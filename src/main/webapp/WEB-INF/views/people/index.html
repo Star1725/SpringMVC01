@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"><!--подключили Thymeleaf-->
+<head>
+    <meta charset="UTF-8">
+    <title>Все люди</title>
+</head>
+<body>
+<!--подобие цикла-->
+<div th:each="person : ${people}"><!--что-то типа for each-->
+    <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName()}">user</a><!--ссылка по имени "user"(оно будет вставляться Thymeleaf динамически из th:text) человека-->
+    <!--, чтобы можно было перейти на его страницу. Для этого есть th:href, где мы и указываем адрес("@{/people/{id}), на которую будет осуществляться переход.-->
+    <!--В этом адресе нам нужно указать значение этого {id}. Его получаем так (id=${person.getId()}). Т.е. id используется для динамического формирования адресса перехода -->
+</div>
+
+</body>
+</html>

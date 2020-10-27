@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"><!--подключили Thymeleaf-->
+<head>
+    <meta charset="UTF-8">
+    <title>Человек</title>
+</head>
+<body>
+<!--Для конкретного человека отобрадаем имя и id-->
+Name: <a th:text="${person.getName()}"></a>
+<p></p><!--использую пустой тег <p></p>, чтобы id было с новой строки. Тег<a></a> - добавляет запись в текущую строку-->
+id: <a th:text="${person.getId()}"></a>
+
+</body>
+</html>
